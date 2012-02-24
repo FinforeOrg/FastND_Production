@@ -1,0 +1,64 @@
+--- 
+keyword_columns_001: 
+  updated_at: 2010-04-29 04:29:41.590929
+  is_aggregate: f
+  id: "1"
+  feed_account_id: 
+  follower: "0"
+  user_id: "10"
+  keyword: $VALE, $F
+  created_at: 2010-04-29 04:29:41.590929
+keyword_columns_002: 
+  updated_at: 2010-04-29 04:29:52.541296
+  is_aggregate: f
+  id: "2"
+  feed_account_id: 
+  follower: "0"
+  user_id: "10"
+  keyword: $VALE
+  created_at: 2010-04-29 04:29:52.541296
+keyword_columns_003: 
+  updated_at: 2010-04-29 04:30:27.804147
+  is_aggregate: f
+  id: "3"
+  feed_account_id: 
+  follower: "0"
+  user_id: "10"
+  keyword: $MMM
+  created_at: 2010-04-29 04:30:27.804147
+keyword_columns_004: 
+  updated_at: 2010-04-29 04:35:03.478953
+  is_aggregate: f
+  id: "4"
+  feed_account_id: 
+  follower: "0"
+  user_id: "10"
+  keyword: $MMM
+  created_at: 2010-04-29 04:35:03.478953
+keyword_columns_005: 
+  updated_at: 2010-05-11 02:58:39.629406
+  is_aggregate: f
+  id: "8"
+  feed_account_id: "42"
+  follower: "0"
+  user_id: "13"
+  keyword: Irish Economy; Euro
+  created_at: 2010-05-11 02:58:39.629406
+keyword_columns_006: 
+  updated_at: 2010-05-11 02:58:39.872573
+  is_aggregate: f
+  id: "9"
+  feed_account_id: "42"
+  follower: "0"
+  user_id: "13"
+  keyword: $INX, $DJI
+  created_at: 2010-05-11 02:58:39.872573
+keyword_columns_007: 
+  updated_at: 2010-05-11 05:09:24.330618
+  is_aggregate: f
+  id: "10"
+  feed_account_id: "42"
+  follower: "50"
+  user_id: "13"
+  keyword: $APPL, $IBM, $C
+  created_at: 2010-05-11 05:09:24.330618

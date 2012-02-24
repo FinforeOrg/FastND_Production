@@ -1,0 +1,4 @@
+FEATURES:
+ 1. Messaging
+ 2. Move mailers to background process
+ 3. Add reCaptcha

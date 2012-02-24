@@ -1,0 +1,39 @@
+noticeboard:
+ - name:string
+ - auto_publish_comment:boolean
+ - has_many: [posts, noticeboard_users]
+
+noticeboard_post:
+ - noticeboard_id:integer
+ - title:string
+ - content:text
+ - is_publish:boolean
+ - user_id:integer
+ - tags:string
+ - has_many: [comments]
+ - belongs_to: [user, noticeboard]
+
+noticeboard_comment:
+ - title:string
+ - content:text
+ - user_id:integer
+ - noticeboard_post_id:integer
+ - is_publish:boolean
+ - belongs_to: [post, user]
+
+noticeboard_user:
+ - user_id:integer
+ - noticeboard_id:integer
+ - is_active:boolean
+ - has_many: [noticeboard_posts, noticeboard_comments]
+ - has_one: [noticeboard_role_user]
+ - belongs_to: [noticeboard, user]
+
+noticeboard_role:
+ - name:string
+ - has_many: [noticeboard_role_users]
+
+noticeboard_role_user:
+ - user_id:integer
+ - noticeboard_role_id:integer
+ - belongs_to: [noticeboard_role, user]

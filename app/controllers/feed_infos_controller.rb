@@ -1,0 +1,132 @@
+class FeedInfosController < ApplicationController
+  before_filter :prepare_condition, :only => [:index]
+  
+  def index  
+    prepare_list_for_user if current_user
+    includes = is_all_companies ? {:company_competitor=>{:except=>[:created_at,:updated_at]},:profiles=>{:only=>[:id,:title],:include=>{:profile_category=>{:only=>[:id,:title]}}}} : {:profiles=>{:only=>[:id,:title],:include=>{:profile_category=>{:except=>[:id,:title]}}}}
+    respond_to do |format|
+      respond_to_do(format, @feed_infos, includes)
+    end
+    #rescue => e
+    #  display_rescue(e)
+  end
+
+  def create
+    @feed_info = FeedInfo.new(params[:feed_info])
+    respond_to do |format|
+      if @feed_info.save
+        respond_to_do(format, @feed_info)
+      else
+        respond_error_to_do(format, @feed_info,"new")
+      end
+    end
+  end
+
+  def update
+    @feed_info = FeedInfo.find(params[:id])
+    respond_to do |format|
+      if @feed_info.update_attributes(params[:feed_info])
+        respond_to_do(format, @feed_info)
+      else
+        respond_error_to_do(format, @feed_info,"edit")
+      end
+    end
+  end
+
+  def destroy
+    @feed_info = FeedInfo.find(params[:id])
+    @feed_info.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(feed_infos_url) }
+      format.xml  { head :ok }
+      format.json  { head :ok }
+      format.fxml  { render :fxml => @feed_info }
+    end
+  end
+  
+  private 
+    def prepare_send_message
+      require 'smtp-tls'
+      options = {:name => params[:name], :phone => params[:phone], :email => params[:email], :message => params[:message]}
+      UserMailer.deliver_contact("info@finfore.net", "Subject: New Inquiry From #{params[:email]}", options)    
+    end
+
+    def prepare_condition
+      @feed_infos = []
+      @conditions = ''
+      @show_all = is_show_all
+      send("#{@category}_conditions")
+      if current_user && !@show_all && !is_chart
+        prepare_profiles_condition
+      end
+    end
+
+    def prepare_list_for_user
+      if !is_chart_or_all_companies
+        @feed_infos = FeedInfo.filter_feeds_data(@conditions,(params[:per_page]||25), params[:page])
+	sanitize_feed_info_profile unless @show_all
+        #prepare_pagination_info unless params[:page_info].blank?
+      elsif is_all_companies
+        @feed_infos = FeedInfo.all_with_competitor(@conditions)
+      elsif is_chart
+        @feed_infos = FeedInfo.all_sort_title(@conditions)
+      end
+      feed_info_complain(@category) if @feed_infos.size < 1
+    end
+
+    def sanitize_feed_info_profile
+      if current_user
+        pids = current_user.profiles.map(&:id)
+        _garbage = []
+        @feed_infos.each do |_info|
+	  return unless _info.class.to_s.match(/FeedInfo/i)
+          _info_profiles = _info.profiles.map(&:id)
+	  _expected_remain = _info_profiles.size - pids.size
+          _remain = _info_profiles - pids          
+          @feed_infos = @feed_infos - [_info] if _remain.size != _expected_remain
+        end
+      end
+    end  
+
+    def is_show_all
+      _return = false
+      @category = params[:category].downcase
+      if @category.include?('all')    
+        @category = @category.gsub(/all|\,/i,"")
+        @category = "all_companies" if @category == "_companies"
+        _return = true
+      end
+      return _return
+    end
+    
+    def broadcast_conditions
+      @conditions += "#{with_http} AND feed_infos.address ~* 'youtube'"
+    end
+    
+    def price_conditions
+      chart_conditions
+    end 
+    
+    def is_chart
+      return @category.match(/chart|price/i)
+    end
+    
+    def is_chart_or_all_companies
+      return is_chart || is_all_companies 
+    end
+    
+    def is_all_companies
+      return @category.match(/all_companies/i)
+    end
+    
+    def prepare_pagination_info
+	   @feed_infos = {:feed_infos=>@feed_infos,
+                     :current_page => @feed_infos.current_page,
+                     :per_page => @feed_infos.per_page,
+                     :total_entries => @feed_infos.total_entries,
+                     :total_pages => @feed_infos.total_pages
+                    } 
+    end
+   
+end

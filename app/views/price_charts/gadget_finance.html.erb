@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title=""
+             title_url="http://finance.google.com"
+             author="Z. Wang, Google Engineering"
+             author_email="googlemodules+finance+chart@google.com"
+             author_affiliation="Google Inc."
+             author_location="Sydney, Australia"
+             thumbnail="/ig/modules/finance_chart-thm.png"
+             screenshot="/ig/modules/finance_chart.png"
+             description="A quick snapshot of your stock"
+             render_inline="never"
+             scaling="false"
+             height="390"
+             singleton="false">
+<Require feature="setprefs"/>
+<Require feature="flash"/>
+</ModulePrefs>
+
+<UserPref name="stockSymbol"
+          datatype="hidden"
+          default_value="GOOG"
+          display_name="Stock symbol"/>
+
+<UserPref name="displayVolume"
+          datatype="bool"
+          default_value="true"
+          display_name="Volume"/>
+
+<UserPref name="displayDividends"
+          datatype="bool"
+          default_value="true"
+          display_name="Dividends"/>
+
+<UserPref name="displayExtendedHours"
+          datatype="bool"
+          default_value="false"
+          display_name="Extended hours"/>
+
+<UserPref name="displaySplits"
+          datatype="bool"
+          default_value="true"
+          display_name="Splits"/>
+
+<UserPref name="finance_symbol"
+          datatype="hidden"
+          default_value="GOOG"/>
+
+<UserPref name="defaultZoomDays"
+          datatype="string"
+          default_value="5"
+          display_name="Default displayed days"/>
+
+<Content type="html"><![CDATA[
+
+<style type="text/css">
+#gfc-sym-bar {height: 30px;}
+#gfc-sym {font-size: 0.9em;}
+#gfc-new-sym {font-size: 0.8em; width: 108px;}
+#gfc-new-sym-btn {font-size: 0.8em;}
+.gfc-new-sym-init {color: #848484;}
+#gfc-disclaimer {font-size: 0.7em; color: #848484;}
+</style>
+
+<div id="gfc-chart"></div>
+
+<script type="text/javascript">
+  var FlashProxy = {_ping: function() {}, callJS: function(){}}, prefs, sym, symbols=[];
+
+function _firstDataIsHere() {}
+function _visibleChartRangeChanged(a, b, c, d, e) {}
+function _setCurrentViewParam(a, b) {}
+
+function load() {
+  if (!prefs) {
+    prefs = new _IG_Prefs(__MODULE_ID__);
+    symbols = prefs.getString("stockSymbol").split(',');
+  }
+  
+  function genUP(v) {
+    var ret = "";
+    for (var i = 0; i < v.length; ++i) {
+       ret += v[i] + "=" + prefs.getBool(v[i]) + "&";
+    }
+    return ret;
+  }
+
+  function genV(v) {
+    var ret = "";
+    for (var i in v) {
+      ret += i + "=" + v[i] + "&";
+    }
+    return ret;
+  }
+
+  var up = genUP(["displayVolume", "displayDividends", "displaySplits",
+                  "displayExtendedHours", "defaultZoomDays"]);
+  up += genV({hasVolume: prefs.getBool("displayVolume"), hasExtendedHours: prefs.getBool("displayExtendedHours")});
+  up += genV({defaultZoomDays: prefs.getString("defaultZoomDays")});
+  up += genV({q: symbols[0], lcId: new Date().getTime()});
+  if (symbols.length > 1) {
+    up += genV({compareTo: escape(symbols.slice(1).join(';'))});
+  }
+
+  var svp = "name:MainViewPoint,height:202,topMargin:0";
+  if (prefs.getBool("displayVolume")) {
+    svp += "::name:BottomViewPoint,height:45,topMargin:0,display:visible";
+  }
+  up += genV({single_viewpoints: escape(svp)});
+  var sly = "vp:MainViewPoint,name:DateLinesLayer,arity:Unique,tickPosition:0,type:simple,hasText:true::vp:MainViewPoint,name:PriceLinesLayer,arity:Unique,type:simple::vp:MainViewPoint,name:LineChartLayer,arity:Unique,type:simple::vp:MainViewPoint,name:AHLineChartLayer,arity:Unique,type:simple::vp:MainViewPoint,name:LastDayLineLayer,arity:Unique,type:simple::vp:MainViewPoint,name:BottomBarLayer,arity:Unique,type:simple";
+  if (prefs.getBool("displayDividends")) {
+    sly += "::vp:MainViewPoint,name:IndependentObjectsLayer,arity:Unique,type:simple,renderObj:dividend,positioning:bottom,avoidObj:split";
+  }
+  if (prefs.getBool("displaySplits")) {
+    sly += "::vp:MainViewPoint,name:IndependentObjectsLayer,arity:Unique,type:simple,renderObj:split,positioning:bottom,avoidObj:dividend";
+  }
+  if (prefs.getBool("displayVolume")) {
+    sly += "::vp:BottomViewPoint,name:VolumeScaleLayer,arity:Unique,type:simple::vp:BottomViewPoint,name:ECNVolume,arity:Unique,type:indicator::vp:BottomViewPoint,name:Volume,arity:Unique,type:indicator::vp:BottomViewPoint,name:DateLinesLayer,arity:Unique,tickPosition:1,type:simple";
+  }
+  up += genV({single_layers: escape(sly)});
+  var cvp = "name:MainViewPoint,height:247,topMargin:15";
+  up += genV({compare_viewpoints: escape(cvp)});
+  var cly = "vp:MainViewPoint,name:PercentLinesLayer,arity:Unique,type:simple::vp:MainViewPoint,name:DateLinesLayer,arity:Unique,type:simple,tickPosition:0::vp:MainViewPoint,name:BottomBarLayer,arity:Unique,type:simple::vp:MainViewPoint,name:PercentLineChartLayer,arity:Multiple,type:simple";
+  up += genV({compare_layers: escape(cly)});
+
+  _IG_EmbedFlash("http://www.google.com/finance/chart9.swf", "gfc-chart", {
+      swf_version: 9,
+      height: 340,
+      menu: false,
+      flashvars: up + "u=http://www.google.com/finance/getprices&fieldSeparator=%2C&objectSeparator=%3A%3A&sparklineType=dynamic&hasDefaultZoomSetting=true&verticalScaling=maximized&hasVerticalScaleSetting=true&snapping=false&minZoomDays=1&infoTextAlign=left&infoTextTopPadding=17&disableExternalInterface=true"
+      });
+}
+
+  _IG_RegisterOnloadHandler(load);
+
+</script>
+]]></Content>
+</Module>

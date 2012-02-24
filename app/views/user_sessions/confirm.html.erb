@@ -1,0 +1,15 @@
+<h2> Confirm </h2>
+<%  form_tag({:action => signup_url, :method => :post}) %>
+ <% if session[:auth_method] == "oauth" %>
+   <%  transfer = %w(_key _token _secret auth_method oauth_provider) %>
+ <% elseif session[:auth_method] == "openid" %>
+   <% transfer =  %w(auth_method openid_identifier) %>
+ <% end %>
+
+ <% transfer.each do |hidden| %>
+   <%= tag :input, {:type => :hidden, :name => hidden.to_sym, :value => session[hidden.to_sym]} %>
+   <%= tag :input, {:type => :hidden, :name => :authentication_type, :value => :user} %>
+   <%= tag :input, {:type => :text, :name => "user[email]"} %>
+   <%= tag :input, {:name => :submit, :type => :submit, :value => "Register"} %>
+ <% end %>
+<% end %>

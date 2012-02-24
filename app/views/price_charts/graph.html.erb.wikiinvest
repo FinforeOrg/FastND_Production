@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <script src="http://charts.wikinvest.com/wikinvest/wikichart/javascript/scripts.php" type="text/javascript"></script>
+    <div id="wikichartContainer_21F4FD4C-A582-4B5F-7CBE-AC653719C75D">
+      <div style="width: 390px; text-align: center; vertical-align: center; margin-top: 0px;">
+        <a href="http://get.adobe.com/flashplayer/">
+          <img src="http://cdn.wikinvest.com/wikinvest/images/adobe_flash_logo.gif" alt="Flash" style="border-width: 0px;"/>
+          <br/>Flash Player 9 or higher is required to view the chart<br/>
+          <strong>Click here to download Flash Player now</strong>
+        </a>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      if (typeof(embedWikichart) != "undefined") {
+        embedWikichart("http://charts.wikinvest.com/WikiChartMini.swf",
+                              "wikichartContainer_21F4FD4C-A582-4B5F-7CBE-AC653719C75D",
+                              "390",
+                              "245",
+                              { "ticker"               : "<%= @ticker %>",
+                                "embedCodeDate" : "<%= @embed_at %>",
+                                "showAnnotations": "false",
+                                "liveQuote"          : "true",
+                                "rollingDate"         : "5 days"
+                               },
+                               {}
+                            );
+      }
+    </script>
+</body>
+</html>

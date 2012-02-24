@@ -1,0 +1,18 @@
+<h1>Login</h1>
+<% form_for @user_session, :url => user_sessions_path(:format=>"xml") do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :login %><br />
+  <%= f.text_field :login %><br />
+  <br />
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+  <br />
+  <%= f.submit "Login" %>
+<% end %>
+
+<h2>OR</h2> click icons below:<br/>
+<% ["google","facebook","twitter","linkedin"].each do |name| %>
+  <%= link_to image_tag("/images/#{name}.png",:border=>0),"/auth/#{name}" %>
+<% end %>

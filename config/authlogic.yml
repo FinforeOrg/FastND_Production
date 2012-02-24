@@ -1,0 +1,17 @@
+connect:
+  twitter:
+    key: "RhXx78t99jxXAf44NwY4w"
+    secret: "ty0AhbgCaDQULguJTQlCBgEO8vi4i4ZtPMR2LEM2KM"
+    label: "Twitter"
+  facebook:
+    key: "cae0ec2a616fecfea6f4d250a119b896"
+    secret: "61fa4f2ccc7cb8e01b39abf662f04cae"
+    label: "Facebook"
+  google:
+    key: "test.finfore.net"
+    secret: "BQFG6UOY+UvNi0IAxqs8t7s2"
+    label: "Google"
+  linkedin:
+    key: "t_4wFj-MqkExvbTSoRGButHzVA44kwnsaJnswD63RCHeWet7B4N9REyo6pMtztA5"
+    secret: "TPHkKZdW_Wt1Mc_TScbj9e5eSzHHs62ERCDB1kVTKXlQwivapUaOP0Tw_1NcGOq9"
+    label: "Linkedin"

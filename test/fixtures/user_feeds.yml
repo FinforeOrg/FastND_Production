@@ -1,0 +1,109 @@
+--- 
+user_feeds_004: 
+  feed_info_id: "144"
+  name: economistsforum
+  updated_at: 2010-04-29 04:29:41.570017
+  id: "13"
+  feed_account_id: 
+  user_id: "10"
+  category_type: suggested
+  created_at: 2010-04-29 04:29:41.450156
+user_feeds_005: 
+  feed_info_id: "130"
+  name: ftfinancenews
+  updated_at: 2010-04-29 04:34:23.765134
+  id: "14"
+  feed_account_id: 
+  user_id: "10"
+  category_type: suggested
+  created_at: 2010-04-29 04:34:23.741357
+user_feeds_006: 
+  feed_info_id: "122"
+  name: ftenergysource
+  updated_at: 2010-05-11 02:58:04.437472
+  id: "31"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: suggested
+  created_at: 2010-05-11 02:58:04.356337
+user_feeds_007: 
+  feed_info_id: "119"
+  name: ftbrusselsblog
+  updated_at: 2010-05-11 02:58:04.540343
+  id: "32"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: suggested
+  created_at: 2010-05-11 02:58:04.52404
+user_feeds_008: 
+  feed_info_id: "123"
+  name: ftcompanies
+  updated_at: 2010-05-11 02:58:04.581559
+  id: "33"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: suggested
+  created_at: 2010-05-11 02:58:04.561534
+user_feeds_009: 
+  feed_info_id: "563"
+  name: http://www.asx.com.au/resources/podcast/podcast.xml
+  updated_at: 2010-05-11 02:58:39.705433
+  id: "34"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: rss
+  created_at: 2010-05-11 02:58:39.688728
+user_feeds_010: 
+  feed_info_id: "36"
+  name: http://www.ft.com/rss/companies/industrials
+  updated_at: 2010-05-11 02:58:39.730392
+  id: "35"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: rss
+  created_at: 2010-05-11 02:58:39.713948
+user_feeds_011: 
+  feed_info_id: "33"
+  name: http://www.ft.com/rss/companies/mining
+  updated_at: 2010-05-11 02:58:39.758783
+  id: "36"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: rss
+  created_at: 2010-05-11 02:58:39.737513
+user_feeds_012: 
+  feed_info_id: "550"
+  name: http://www.ft.com/rss/companies/oil-gas
+  updated_at: 2010-05-11 02:58:39.846621
+  id: "37"
+  feed_account_id: "42"
+  user_id: "13"
+  category_type: rss
+  created_at: 2010-05-11 02:58:39.765885
+user_feeds_001: 
+  feed_info_id: "34"
+  name: http://www.ft.com/rss/companies/oil-gas
+  updated_at: 2010-04-29 04:29:26.773548
+  id: "10"
+  feed_account_id: 
+  user_id: "10"
+  category_type: rss
+  created_at: 2010-04-29 04:29:26.756158
+user_feeds_002: 
+  feed_info_id: "31"
+  name: http://www.ft.com/rss/companies
+  updated_at: 2010-04-29 04:29:26.796709
+  id: "11"
+  feed_account_id: 
+  user_id: "10"
+  category_type: rss
+  created_at: 2010-04-29 04:29:26.78071
+user_feeds_003: 
+  feed_info_id: "29"
+  name: http://www.ft.com/rss/home/asia
+  updated_at: 2010-04-29 04:29:26.820069
+  id: "12"
+  feed_account_id: 
+  user_id: "10"
+  category_type: rss
+  created_at: 2010-04-29 04:29:26.803597

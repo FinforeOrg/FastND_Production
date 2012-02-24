@@ -1,0 +1,136 @@
+--- 
+users_004: 
+  last_login_at: 2010-05-15 03:55:43.000272
+  is_online: 
+  updated_at: 2010-05-15 04:39:06.17967
+  industry: All
+  last_request_at: 2010-05-15 04:39:06.178661
+  crypted_password: f533acdfdddc1d7aae91906c5e737a2bc5e4eafcc2a1ef7f01b5015bacedf562b582ed16725526735b0f47b876df6fa6e3fc784b9717171d93613218e1b479c1
+  email_work: shane_leonard@yahoo.com
+  email_home: shane_leonard@hotmail.com
+  current_login_ip: 114.58.120.9
+  perishable_token: aM81cJGWM2guqXvHnYUS
+  single_access_token: H9OLxPblvUAgTASAPyTm
+  country: ""
+  current_login_at: 2010-05-15 03:57:33.201936
+  password_salt: g2Vc9eNWC0HI5v5CEn3B
+  geographic: Global
+  failed_login_count: "0"
+  id: "13"
+  team: ""
+  login_count: "12"
+  persistence_token: bd4833b53a2346bd82fe867789f49d080c5f2061885900d01f0ee34618c77553b6ac503beed8c2a0643b47c51275f22528b98465f2497e53d8aebc60014d4623
+  is_email_home_primary: "false"
+  login: shane_leonard@yahoo.com
+  sport: 
+  created_at: 2010-05-10 14:00:00
+  profession: Economics & Strategy
+  last_login_ip: 78.86.29.211
+users_005: 
+  last_login_at: 2010-05-22 05:52:32.485
+  is_online: 
+  updated_at: 2010-05-22 09:53:41.71
+  industry: Basic
+  last_request_at: 2010-05-22 09:53:41.707
+  crypted_password: fec50fc9b02e591809a4b1ccdf80a7f14870ac77db722383f59eb55d1a235ec6e130f603cc75f27cd11216f9aae2b4a184a8d51b48cfe454e30a6ae1b26f9d50
+  email_work: work@email.com
+  email_home: home@email.com
+  current_login_ip: 127.0.0.1
+  perishable_token: SNl-po9Bwj2rvND_CePE
+  single_access_token: uzpJob9N7WpcKmUu1NyI
+  country: ""
+  current_login_at: 2010-05-22 08:29:33.719
+  password_salt: XKoT02hRHU4tDg-85BwN
+  geographic: UK
+  failed_login_count: "0"
+  id: "14"
+  team: ""
+  login_count: "65"
+  persistence_token: 32e171a1f80f9d73d92ee6f2dce0fbe1803fc3268c8406968f12f321b58b4b47614ac505221f32ec9b15825d578e9125728838350c21bcb66edcf0cee79e2324
+  is_email_home_primary: "false"
+  login: work@email.com
+  sport: 
+  created_at: 2010-05-19 14:10:07.273
+  profession: Equities
+  last_login_ip: 127.0.0.1
+users_001: 
+  last_login_at: 
+  is_online: 
+  updated_at: 2010-04-08 20:24:23.810117
+  industry: Technology
+  last_request_at: 2010-04-08 20:24:23.809134
+  crypted_password: b27b84b0b706e902276c1838ce7db1ccfb0e58748ec1ee013c4556db469875395fc28ff6c0eb36f3c1733827778684e029e3b86312073c7ad8053b05b1007d06
+  email_work: aura.anar@gmail.com
+  email_home: aura_anar@yahoo.com
+  current_login_ip: 123.231.246.186
+  perishable_token: 8V-FYrLpbPtSs_Jp2QnE
+  single_access_token: RCfrYxZNvfSrc8GVv1Vq
+  country: ""
+  current_login_at: 2010-04-08 20:22:02.937175
+  password_salt: G-y3TajdxnhD7HUh1pAG
+  geographic: Global
+  failed_login_count: "0"
+  id: "2"
+  team: ""
+  login_count: "1"
+  persistence_token: 0bf50669196c76db6438e773211847e2d410f923ea4d57aa6073e2bac7dd261e2f4c2e296ca8f3dd6812c646395c06e8cf0cf162de11b67b788125d3e124133f
+  is_email_home_primary: "false"
+  login: aura.anar@gmail.com
+  sport: 
+  created_at: 2010-04-08 20:22:02.976026
+  profession: Private Banking
+  last_login_ip: 
+users_002: 
+  last_login_at: 2010-05-09 20:08:02.806
+  is_online: 
+  updated_at: 2010-05-10 22:04:27.247131
+  industry: Industrial
+  last_request_at: 2010-05-10 22:04:27.241931
+  crypted_password: be1f752549da4be9b0f10bbccb5b7f7509f0d69c6925207be251f26f2ee2927ea0929b6aa18533b02e959d15e396712284e9bb152ee9c8305939423c776fe123
+  email_work: yacobus.reinhart@business.com
+  email_home: booking2heaven@yahoo.com
+  current_login_ip: 202.138.251.156
+  perishable_token: rijquiWjgLBV9WY-_2cL
+  single_access_token: PXLoT6SXPxxBwWDVVfjl
+  country: ""
+  current_login_at: 2010-05-10 21:54:51.185714
+  password_salt: mPIEzVeT6IvdL3gc67GU
+  geographic: UK
+  failed_login_count: "0"
+  id: "4"
+  team: ""
+  login_count: "92"
+  persistence_token: 1c9044c85a035491e7f02cdf253b54e25c3038f547ff4ce82585da0a5598e0bd6c1569681b13650ea6bb160fc676b5ab35b290e1a64d8be10a948291c5a29354
+  is_email_home_primary: "true"
+  login: booking2heaven@yahoo.com
+  sport: 
+  created_at: 2010-04-13 14:00:00
+  profession: Equity Research
+  last_login_ip: 127.0.0.1
+users_003: 
+  last_login_at: 
+  is_online: 
+  updated_at: 2010-04-29 04:49:30.704968
+  industry: 
+  last_request_at: 2010-04-29 04:49:30.70252
+  crypted_password: 829e5e4de3ee746e85d028a0004fee1dc339cb887e89c8fae5452a75760b79ff130455542a318334bcbc4985dfb44f54e23fab49278a6897a27435cf9c81584d
+  email_work: sxapril@yahoo.com
+  email_home: sxapril@yahoo.com
+  current_login_ip: 114.56.167.89
+  perishable_token: g2IZ3tM_X4tgsEDNbnIv
+  single_access_token: LO3gmvH0CE21XkzDlomg
+  country: 
+  current_login_at: 2010-04-29 04:28:39.229725
+  password_salt: dtvb5WbpYhqz896DyhLE
+  geographic: 
+  failed_login_count: "0"
+  id: "10"
+  team: 
+  login_count: "1"
+  persistence_token: 442c3827a682d23f5701725f4af3e6fe92f38b9a56e3302618378d3f370634ad96af700f9486d229844677346a690683942966609ea30943ac8cd238fb6b9132
+  is_email_home_primary: 
+  login: sxapril@yahoo.com
+  sport: 
+  created_at: 2010-04-29 04:28:39.230446
+  profession: 
+  last_login_ip: 

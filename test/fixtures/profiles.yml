@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  profile_category_id: 1
+  title: MyString
+  is_public: false
+  is_admin: false
+
+two:
+  profile_category_id: 1
+  title: MyString
+  is_public: false
+  is_admin: false
