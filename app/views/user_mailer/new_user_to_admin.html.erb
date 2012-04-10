@@ -8,10 +8,9 @@
       <p>FinforeNet has new great member please support him/her to get great information, here is your new user information:</p>
          Name             : <%= @user.full_name %><br />
          Email            : <%= @user.login %><br />
-         Profession Focus : <%= @user.profession %><br />
-         Geographic Focus : <%= @user.geographic %><br />
-         Industry Focus   : <%= @user.industry %><br />
-
+         <% @user.profiles.each do |profile| %>
+           <%= profile.profile_category.title %> : <%= profile.title %>
+         <% end %>
        <p>Best Regards,</p>
        <p>FinforeNet Support</p>
     </body>
